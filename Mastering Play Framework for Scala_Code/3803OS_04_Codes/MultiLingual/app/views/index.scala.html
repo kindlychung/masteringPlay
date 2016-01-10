@@ -1,0 +1,34 @@
+@(enquiryForm: Form[(String, Option[String], String)])(implicit lang: Lang)
+
+@import helper._
+
+@main(Messages("enquiry.title")) {
+
+    <div>
+        <h2>@Messages("enquiry.askUs")</h2>
+
+        @form(routes.AppController.enquire) {
+
+            @enquiryForm.globalError.map { error =>
+                <p>
+                    @error.message
+                </p>
+            }
+
+            <label for="emailId">@Messages("enquiry.user.email")
+                <input type="email" id="emailId" name="emailId" required>
+            </label>
+
+            <label for="userName">@Messages("enquiry.user.name")
+                <input type="text" class="form-control" id="userName" name="userName">
+            </label>
+
+            <label for="question">@Messages("enquiry.question")
+                <textarea rows="4" id="question" name="question"></textarea>
+            </label>
+
+            <br/>
+            <button type="submit">@Messages("enquiry.submit")</button>
+        }
+    </div>
+}

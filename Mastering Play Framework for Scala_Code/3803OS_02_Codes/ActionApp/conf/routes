@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                          controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file              controllers.Assets.at(path="/public", file)
+
+GET         /api/artist                controllers.Application.listArtist
+
+GET         /api/artist/:name          controllers.Application.fetchArtistByName(name)
+
+#GET        /api/search/artist        controllers.Application.search(name:String,country:String)
+
+GET         /api/search/artist         controllers.Application.search(name:String,country:String?="")
+
+GET         /api/search2/artist        controllers.Application.search2(name:Option[String],country:String)
+
+POST        /subscribe                 controllers.Application.subscribe

@@ -1,0 +1,16 @@
+<div>
+    <p>
+        Please select the account you wish to use
+
+        @for(auth <- otherAuth) {
+            @defining(auth.id == otherAuth.head.id) { isChecked =>
+                @if(isChecked) {
+                    <input type="radio" name="account" value="@auth.id" checked="checked"> @auth.name
+                    } else {
+                    <input type="radio" name="account" value="@auth.id"> @auth.name
+                    }
+            }
+        <br/>
+        }
+    </p>
+</div>

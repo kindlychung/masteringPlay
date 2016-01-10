@@ -1,0 +1,26 @@
+@(artists: Seq[Artist])
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Action App</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+            @artists.map { artist =>
+                <tr>
+                    <td>@artist.name</td>
+                    <td>@artist.country</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </body>
+</html>

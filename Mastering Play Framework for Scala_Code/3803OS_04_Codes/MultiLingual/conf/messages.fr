@@ -1,0 +1,6 @@
+enquiry.title = Demande de renseignements
+enquiry.askUs = Vous avez une question? Demandez-nous!
+enquiry.user.email = Votre adresse e-mail
+enquiry.user.name = Votre nom
+enquiry.question = Votre question
+enquiry.submit = Demandez

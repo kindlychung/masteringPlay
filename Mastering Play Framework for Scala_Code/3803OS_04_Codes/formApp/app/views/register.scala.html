@@ -1,0 +1,20 @@
+@import models.Credentials
+
+@(registerForm: Form[Credentials])(implicit flash: Flash)
+
+@main("Register") {
+    @helper.form(action = routes.Application.newUser, 'enctype -> "multipart/form-data") {
+        <label>Email Id
+            <input type="text" name="loginId" tabindex="1">
+        </label>
+
+        <label>Password
+            <input type="password" name="password" tabindex="2">
+        </label>
+
+        <input type="submit" value="Register">
+    }
+    <hr/>
+    Existing User?<a href="@routes.Application.login()">Login</a>
+    <hr/>
+}

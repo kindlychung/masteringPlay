@@ -1,0 +1,23 @@
+@import models.Credentials
+
+@(registerForm: Form[Credentials])(implicit flash: Flash)
+
+@main("Register") {
+    @helper.form(action = routes.Application.newUser, 'enctype -> "multipart/form-data") {
+        @registerForm.globalErrors.map { error =>
+            <p class="error">
+                @error.message
+            </p>
+        }
+
+        @helper.inputText(registerForm("loginId"), 'tabindex -> "1", '_label -> "Email ID",
+            'type -> "email", 'required -> "required", '_help -> "A valid email Id")
+
+        @helper.inputPassword(registerForm("password"), 'tabindex -> "2",
+            'required -> "required", '_help -> "preferable min.length=8")
+
+        <input type="submit" value="Register">
+        <hr/>
+        Existing User?<a href="@routes.Application.login()">Login</a>
+    }
+}

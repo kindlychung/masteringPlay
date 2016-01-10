@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+# Home page
+GET        /                controllers.AppController.index
+
+GET        /login           controllers.AppController.login
+
+GET        /home            controllers.AppController.index
+
+GET        /greeting        controllers.AppController.fetchGreeting
+
+GET        /demo            controllers.AppController.jsDemo
+
+GET        /jsroute            controllers.AppController.jsRouter
+
+

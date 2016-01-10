@@ -1,0 +1,16 @@
+{ 
+  "name": "myApp", 
+  "version": "1.0.0", 
+  "dependencies": { 
+  }, 
+  "devDependencies": { 
+    "grunt": "~0.4.1", 
+    "grunt-contrib-concat": "~0.1.3", 
+    "grunt-contrib-cssmin": "~0.5.0", 
+    "grunt-contrib-clean": "~0.4.0", 
+    "grunt-contrib-less": "~0.7.0" 
+  }, 
+  "engines": { 
+    "node": ">=0.8.0" 
+  } 
+}

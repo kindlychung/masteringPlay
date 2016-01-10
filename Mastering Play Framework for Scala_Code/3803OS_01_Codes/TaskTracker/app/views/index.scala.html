@@ -1,0 +1,34 @@
+@(tasks: List[Task])
+
+@main("Task Tracker") {
+
+    <h2>Task Tracker</h2>
+    <div>
+        <form action="@routes.TaskController.newTask()" method="post">
+            <input type="text" name="taskName" placeholder="Add a new Task" required>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div>
+        <ul>
+        @tasks.map { task =>
+            <li>
+                @task.name <button onclick="deleteTask ( @task.id) ;">Remove</button>
+            </li>
+        }
+        </ul>
+    </div>
+    <script>
+    function deleteTask ( id ) {
+        var req = new XMLHttpRequest ( ) ;
+        req.open ( "delete", "/tasks/" + id ) ;
+        req.onload = function ( e ) {
+            if ( req.status = 200 ) {
+                document.location.reload ( true ) ;
+            }
+        } ;
+        req.send ( ) ;
+
+    }
+    </script>
+}
